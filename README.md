@@ -1,6 +1,6 @@
 # React-Ts-Template
-React+TypeScriptのプロジェクト雛形です。
-Chromeでデバッグする設定になっています。(.vscode/launch.json)
+- React+TypeScriptのプロジェクト雛形です。
+- Chromeでデバッグする設定になっています。(.vscode/launch.json)
 
 # 使い方
 1. git clone https://github.com/aaaa1597/React-Ts-Template.git
