@@ -39,5 +39,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "React+TypeScriptのプロジェクト雛形です。",
+  "main": "index.js",
+  "devDependencies": {
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "3.1.0",
+    "prop-types": "^15.8.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
