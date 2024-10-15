@@ -1,0 +1,360 @@
+
+@import '../../../mixin/mixin.scss';
+// フォームエラー
+.error {
+    color: red;
+    font-family: "Noto Sans JP";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.modal {
+    max-width: 1200px;
+    width: 100%;
+    background-color: #F8F8F8;
+    position: relative;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 1;
+    transition: 0.5s;
+    max-height: 680px;
+
+    .flexbox {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 25px;
+        background-color: #FFFFFF;
+        width: 100%;
+        gap: 5%;
+    }
+
+    &__close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    .formbox {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 53px;
+        overflow-y: scroll;
+        padding-right: 25px;
+        width: 50%;
+        max-height: 500px;
+
+        .shipping_info {
+            width: 100%;
+            padding: 20px;
+            margin: 0 auto;
+            border-radius: 5px;
+            background-color: #fff;
+
+            .shipping_title {
+                text-align: center;
+                color: #000;
+                font-family: "Noto Sans JP";
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 20px;
+                /* 100% */
+                margin-bottom: 25px;
+            }
+
+            .shipping_form {
+                width: 100%;
+
+                .form_group {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 15px;
+                    gap: 30px;
+                    align-items: flex-end;
+                    .inputbox {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-between;
+                        flex-direction: column;
+                        @include gaps(30px, 2);
+                    }
+
+                    input {
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 3px;
+                        font-size: 1em;
+                        width: 89%;
+
+                        &:focus {
+                            outline: none;
+                            border-color: #0a0a0a;
+                        }
+
+                        &::placeholder {
+                            color: #ccc;
+                        }
+                    }
+
+                    &:nth-child(4),
+                    &:nth-child(5),
+                    &:nth-child(6),
+                    &:nth-child(7),
+                    &:nth-child(8) {
+                        display: block;
+
+                        input {
+                            width: 95%; // フル幅に変更
+                        }
+                    }
+                }
+            }
+        }
+
+        .payment_info {
+            width: 100%;
+            padding: 20px;
+            margin: 0 auto;
+            border-radius: 5px;
+            background-color: #fff;
+
+            .payment_title {
+                text-align: center;
+                color: #000;
+                font-family: "Noto Sans JP";
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 20px;
+                /* 100% */
+                margin-bottom: 25px;
+            }
+
+            .payment_methods {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-bottom: 20px;
+                gap: 10px;
+
+                label {
+                    color: #000;
+                    font-family: "Noto Sans JP";
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: normal;
+
+                    input {
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+            .payment_form {
+                width: 100%;
+
+                .form_group {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 15px;
+                    gap: 30px;
+
+                    .inputbox {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-between;
+                        flex-direction: column;
+                        @include gaps(30px, 2);
+                    }
+
+                    input {
+                        width: 95%;
+                        padding: 10px;
+                        margin-bottom: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 3px;
+                        font-size: 1em;
+
+                        &:focus {
+                            outline: none;
+                            border-color: #0a0a0a;
+                        }
+
+                        &::placeholder {
+                            color: #ccc;
+                        }
+                    }
+
+                    &:last-child {
+                        input {
+                            width: 89%;
+                        }
+                    }
+
+                    &:nth-child(1),
+                    &:nth-child(2) {
+                        display: block;
+
+                        input {
+                            width: 95%; // フル幅に変更
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .accordion {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 45%;
+        overflow-y: auto;
+        max-height: 500px;
+        padding-right: 10px;
+
+        @media screen and (max-width: 768px) {
+            padding: 0 24px;
+        }
+
+        .faq-title {
+            margin-bottom: 40px;
+        }
+
+        .toggle {
+            display: none;
+        }
+
+        .faq {
+            position: relative;
+            width: 100%;
+            max-width: 1100px;
+            margin-bottom: 5px;
+        }
+
+        .question,
+        .anser {
+            transform: translateZ(0);
+            transition: all 0.3s;
+        }
+
+        .question {
+            border: solid 1px #999;
+            padding: 1rem 2.2rem 1rem 20px;
+            display: block;
+            color: #2F2F2F;
+            border: 1px solid #E8E8E8;
+            background: #FFF;
+            font-family: "Noto Sans JP", sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .question:after,
+        .question:before {
+            content: "";
+            position: absolute;
+            right: 35px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 2px;
+            height: 0.75rem;
+            background-color: #C33131;
+            transition: all 0.3s;
+        }
+
+        .question:after {
+            transform: rotate(90deg);
+        }
+
+        .anser {
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        .anser div {
+            margin: 0;
+            padding: 1rem 2.2rem 1rem 22px;
+            line-height: 1.8;
+        }
+
+        .toggle:checked+.question+.anser {
+            max-height: 500px;
+            transition: all 1.5s;
+        }
+
+        .toggle:checked+.question:before {
+            transform: rotate(90deg) !important;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+
+            .btn1 {
+                width: 181px;
+                height: 43px;
+                border-radius: 21.5px;
+                border: 1px solid #C33131;
+                background: #FFF;
+                position: relative;
+
+                &__img {
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    top: 54%;
+                    left: 15%;
+                }
+
+                &__text {
+                    color: #C33131;
+                    font-family: "Noto Sans JP";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                }
+            }
+
+            .btn2 {
+                width: 181px;
+                height: 43px;
+                border-radius: 21.5px;
+                background: #C33131;
+                position: relative;
+
+                &__img {
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    top: 54%;
+                    right: 15%;
+                }
+
+                &__text {
+                    color: #FFF;
+                    font-family: "Noto Sans JP";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                }
+            }
+        }
+    }
+}

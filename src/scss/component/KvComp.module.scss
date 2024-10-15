@@ -1,0 +1,157 @@
+@use '../common/common.scss';
+
+.kv {
+    width: 100%;
+    overflow: hidden;
+    min-height: 700px;
+    &__title {
+        background: linear-gradient(180deg, #FFD4D4 -4.08%, #FFF 94.38%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        font-family: "Noto Sans JP", sans-serif;
+        font-weight: 900;
+        font-size: 150px;
+        line-height: 137px;
+        text-wrap: nowrap;
+    }
+
+    &__box {
+        height: 100%;
+        width: 100%;
+        max-height: 640px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        position: relative;
+        padding: 66px 0 0 0;
+
+        @media screen and (max-width: 1600px) {
+            padding: 66px;
+            justify-content: flex-start;
+        }
+
+        @media screen and (max-width: 1024px) {
+            height: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            padding: 66px 24px;
+        }
+
+        .kv_main_content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            max-width: 1400px;
+
+            @media screen and (max-width: 1600px) {
+                justify-content: flex-start;
+            }
+
+            @media screen and (max-width: 1024px) {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        &__cont {
+            width: 50%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            min-width: 650px;
+
+            @media screen and (max-width: 1024px) {
+                min-width: auto;
+                width: 100%;
+            }
+
+            .back_lavel {
+                background-color: #FFFFFF;
+                width: auto;
+                font-family: "Noto Sans JP", sans-serif;
+                font-weight: 700;
+                font-size: 48px;
+                line-height: 88px;
+                padding: 0 20px;
+                color: #C1262C;
+                margin-bottom: 27px;
+
+                @media screen and (max-width: 768px) {
+                    font-size: 32px;
+                    line-height: 50px;
+                }
+
+                @media screen and (max-width: 425px) {
+                    font-size: 26px;
+                }
+
+                .small {
+                    font-size: 40px;
+
+                    @media screen and (max-width: 768px) {
+                        font-size: 28px;
+                    }
+
+                    @media screen and (max-width: 425px) {
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            .text {
+                font-family: "Noto Sans JP", sans-serif;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 32px;
+                color: #FFF;
+                margin-top: 23px;
+                padding: 0 20px;
+
+                @media screen and (max-width: 768px) {
+                    margin-top: 0;
+                    padding: 0;
+                }
+
+                @media screen and (max-width: 425px) {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &__imgbox {
+            width: 50%;
+            min-width: 840px;
+            transform: translateY(-85px) scale(1.2);
+
+            @media screen and (max-width: 1024px) {
+                min-width: auto;
+                transform: translateY(-0px) scale(1);
+                width: 100%;
+            }
+        }
+
+        &__scroll {
+            position: absolute;
+            bottom: 3%;
+            right: 3%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+
+            .text {
+                color: #EFEFEF;
+                font-family: "Noto Sans JP", sans-serif;
+                font-weight: 500;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

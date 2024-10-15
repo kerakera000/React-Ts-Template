@@ -1,0 +1,261 @@
+
+@import '../../../mixin/mixin.scss';
+
+.modal {
+    max-width: 1200px;
+    width: 100%;
+    background-color: #F8F8F8;
+    position: relative;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    opacity: 1;
+    transition: 0.5s;
+    max-height: 680px;
+
+    .flexbox {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 25px;
+        background-color: #FFFFFF;
+    }
+
+    &__close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    &__imgbox {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 25px;
+        width: 50%;
+
+        .subimg_box {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+
+            &__img {
+                aspect-ratio: 1/1;
+                max-height: 90px;
+                max-width: 90px;
+            }
+        }
+    }
+
+    &__textbox {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 50%;
+        padding-left: 7%;
+        overflow: visible;
+        max-height: 500px;
+
+        .title {
+            color: #2F2F2F;
+            font-family: "Noto Sans JP";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 24px;
+        }
+
+        .tagbox {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 7px;
+
+            .tag {
+                color: #C33131;
+                font-family: "Noto Sans JP";
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+        }
+
+        .text {
+            color: #2F2F2F;
+            font-family: "Noto Sans JP";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-top: 35px;
+        }
+
+        .spec {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            gap: 3px;
+            margin-top: 13px;
+
+            &__title {
+                color: #2F2F2F;
+                font-family: "Noto Sans JP";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+
+            &__tagbox {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                flex-direction: column;
+
+                .tag {
+                    color: #2F2F2F;
+                    font-family: "Noto Sans JP";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+            }
+        }
+
+        .rental {
+            color: #2F2F2F;
+            font-family: "Noto Sans JP";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 16px;
+            margin-top: 23px;
+        }
+
+        .custom_dropdown {
+            position: relative;
+            width: 80%;
+            margin-top: 11px;
+
+            &::before {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                content: '';
+                width: 16px;
+                height: 8px;
+                background: #666666;
+                clip-path: polygon(0 0, 100% 0, 50% 100%);
+            }
+
+            .selecttext {
+                color: #020001;
+                font-family: "Noto Sans JP";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 14px;
+            }
+
+            .dropdown {
+                background-color: #fff;
+                border: 1px solid #ccc;
+                padding: 10px;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .dropdown_menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                border: 1px solid #ccc;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                z-index: 10;
+
+                li {
+                    padding: 10px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    &:hover {
+                        background-color: #f0f0f0;
+                    }
+
+                    .text {
+                        font-weight: bold;
+                        margin-top: 0%;
+                        color: #020001;
+                        font-family: "Noto Sans JP";
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 14px;
+                    }
+
+                    .price {
+                        color: #2D2D2D;
+                        font-family: "Noto Sans JP";
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 14px;
+                        /* 100% */
+                        letter-spacing: 0.42px;
+
+                        .price__tax {
+                            color: #6D6D6D;
+                            font-family: "Noto Sans JP";
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 14px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__go_payment {
+        border-radius: 50px;
+        background: #a9a6a6;
+        color: #FFF;
+        font-family: "Noto Sans JP";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding: 10px 20px 10px 50px;
+        margin-top: 50px;
+
+        .mainimg {
+            margin-left: 30px;
+            transform: translateY(-2px);
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+        }
+
+        &.active {
+            background-color: #C33131;
+        }
+    }
+}
